@@ -1,0 +1,17 @@
+config:
+    name: 用例开关测试
+
+testcases:
+    t1:
+      testcase: testcases/t1.yml
+
+    t11:
+      testcase: testcases/t11.yml
+
+    t12:
+      testcase: testcases/t12.yml
+
+    t13:
+      testcase: testcases/t13.yml
+
+

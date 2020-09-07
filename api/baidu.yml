@@ -1,0 +1,56 @@
+-   config:
+        name: testcase description
+        variables: {}
+-   test:
+        name: /s
+        request:
+            headers:
+                Sec-Fetch-Dest: empty
+                Sec-Fetch-Mode: cors
+                Sec-Fetch-Site: same-origin
+                User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36
+                X-Requested-With: XMLHttpRequest
+                is_referer: https://www.baidu.com/s?wd=%E5%91%A8%E5%8D%8E%E5%81%A5&rsv_spt=1&rsv_iqid=0xd8050680000121b4&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_enter=0&rsv_dl=tb&oq=%25E5%2591%25A8%25E5%258D%258E%25E5%2581%25A5&rsv_btype=t&rsv_t=44acGpLidxGPg9YSpKXWjnOkSiXuErAtuyGbp1%2FDL%2FvhFCU9K0jKyYQoJKfdDb5Sg3Eh&rsv_pq=f294c2a7000aaa98
+                is_xhr: '1'
+            method: GET
+            params:
+                _ck: 64414.1.124.54.23.642.38
+                bs: 周华健
+                chk: 5f55c633
+                cqid: d4f1c04b000017a7
+                csq: '1'
+                f: '8'
+                f4s: '1'
+                ie: utf-8
+                isbd: '1'
+                isid: f7170f01000b7ac8
+                isnop: '0'
+                issp: '1'
+                istc: '676'
+                mod: '2'
+                oq: '%E5%91%A8%E5%8D%8E%E5%81%A5'
+                pstg: '20'
+                rqlang: cn
+                rsv_bp: '1'
+                rsv_btype: t
+                rsv_dl: tb
+                rsv_enter: '0'
+                rsv_idx: '2'
+                rsv_iqid: '0xd8050680000121b4'
+                rsv_isid: '7560_32606_1429_32327_31660_32115_26350'
+                rsv_pq: f7170f01000b7ac8
+                rsv_spt: '1'
+                rsv_stat: '-2'
+                rsv_t: 376bVhqFYVnXC0/xnUFY+EZr9TFD3U+T82gQkfFJjwoGuuRKcHqdxVG23xJxzhKtxgVa
+                tn: baiduhome_pg
+                ver: QNsdHNADPrXaje7boqGFye9W0Ld8WSuVCYm
+                wd: 周华健
+            url: https://www.baidu.com/s
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - headers.Content-Type
+            - text/html;charset=utf-8

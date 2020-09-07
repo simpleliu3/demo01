@@ -1,0 +1,28 @@
+name: 登录
+base_url: https://www.mochen166.net
+
+request:
+    url: /sso/login
+    verify: false #忽略SSL证书校验
+    headers:
+      Sec-Fetch-Dest: empty
+      Sec-Fetch-Mode: cors
+      Sec-Fetch-Site: same-origin
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36
+      X-Requested-With: XMLHttpRequest
+    method: GET
+    params:
+      _: '1599465804387'
+      appId: '5'
+      #                callback: jsonp1
+      cn: games1234
+      from: portal
+      password: 72f2e377f35699d835e5d7479f35531e
+      way: pwd
+
+vlidate:
+  - eq: [status_code,200]
+
+
+

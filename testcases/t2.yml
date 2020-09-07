@@ -1,0 +1,49 @@
+-   config:
+        name: testcase description
+
+
+-   test:
+        name: 百度搜索 $wd
+        variables:
+            wd: ${ENV(username)}
+        request:
+            headers:
+                Sec-Fetch-Dest: empty
+                Sec-Fetch-Mode: cors
+                Sec-Fetch-Site: same-origin
+                User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                    (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36
+                X-Requested-With: XMLHttpRequest
+                is_referer: https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=25017023_10_pg&wd=fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B&oq=fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B&rsv_pq=ce8c290a000373d7&rsv_t=a06cftayTVLnYK6vn9fyZ71qdHQFa6jKAQeUxHjlxOd6syU6TAri0ylPMAt7Q%2Besg%2BYmvlk&rqlang=cn
+                is_xhr: '1'
+            method: GET
+            params:
+                _cr1: '33993'
+                _ss: '1'
+                bs: $wd
+                clist: ''
+                csor: '0'
+                f: '8'
+                f4s: '1'
+                hsug: ''
+                ie: utf-8
+                isbd: '1'
+                isid: DEFEC9A50FE78154
+                mod: '1'
+                oq: fiddler%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B
+                rqlang: cn
+                rsv_bp: '1'
+                rsv_btype: t
+                rsv_dl: tb
+                rsv_enter: '0'
+                rsv_pq: ce8c290a000373d7
+                rsv_sid: undefined
+                rsv_t: e103kG0JYC8HTyKbXQTRH22DxQLKlhfqbu7XmGUh1x4Q+4un5PLLzc+UF/52M/pBJf/+XU0
+                tn: 25017023_10_pg
+                wd: $wd
+            url: https://www.baidu.com/s
+        validate:
+        -   eq: [status_code,200]
+        -   eq:
+            - headers.Content-Type
+            - text/html;charset=utf-8

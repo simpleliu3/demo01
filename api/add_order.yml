@@ -1,0 +1,16 @@
+name: 下单
+base_url: https://www.mochen166.net
+request:
+  verify: false
+  url: /lottery/api/u/v1/lottery/add_order
+  method: POST
+  headers:
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36
+  data:
+    lottery: XJSSC
+    issue: 20200907-33
+    order: '[{"method":"dwd_dwd_dwd","code":"3||||","nums":"1","piece":"1","price":"2","odds":"19.04","point":"0","amount":"2"}]'
+    betType: 1
+    sourceType: 0
+validate:
+  - eq: [status_code,200]

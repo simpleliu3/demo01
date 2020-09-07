@@ -1,0 +1,20 @@
+-   config:
+        name: testcase description
+        base_url: https://www.baidu.com
+        output:
+            - ot
+            - he
+
+-   test:
+        name: 百度 $wd
+        api: api/t1.yml
+        skipIf: ${is_skip(t12)}
+        variables:
+            wd: 刘德华
+        extract:
+            ot: status_code
+            he: headers.Content-Type
+        validate:
+          -  eq:
+              - headers.Content-Type
+              - text/html;charset=utf-8

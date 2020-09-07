@@ -1,0 +1,14 @@
+-   config:
+        base_url: https://www.mochen166.net
+        output:
+          - msg
+          - ck
+-   test:
+        name: 登录
+        api: api/mclg.yml
+        extract:
+          - msg: content.msg
+          - ck: cookies
+        validate:
+        -   eq: [$msg,"登录成功"]
+

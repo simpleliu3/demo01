@@ -1,0 +1,21 @@
+- config:
+    name: 下单
+    output:
+        - msg_login
+        - msg_order
+
+- test:
+    name: 登录
+    api: api/mclg.yml
+    extract:
+        msg_login: content.msg
+    validate:
+        - eq: [$msg_login,"登录成功"]
+
+- test:
+    name: 下单
+    api: api/add_order.yml
+    extract:
+        msg_order: content.msg
+    validate:
+        - eq: [$msg_order,"余额不足"]

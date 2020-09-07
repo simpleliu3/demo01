@@ -1,0 +1,13 @@
+config:
+    name: 百度搜索
+
+testcases:
+    百度搜索 $wd:
+      testcase: testcases/t1.yml
+      parameters: #从 2.0.0 版本开始参数化的功能需要在 testsuite中实现
+           wd: ["刘德华","李小龙","MJ"]
+
+    百度 $wd:
+      testcase: testcases/t2.yml
+      parameters: #从 2.0.0 版本开始参数化的功能需要在 testsuite中实现
+           wd: ${P(data/t2.csv)}
