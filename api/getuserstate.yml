@@ -1,0 +1,23 @@
+name: testcase description
+request:
+      headers:
+            Sec-Fetch-Dest: empty
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-origin
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36
+            X-Requested-With: XMLHttpRequest
+      method: GET
+      params:
+            _: '1599480971191'
+            appId: '1'
+#            callback: jsonp1
+      url: https://www.mochen166.net/sso/u/getUserLoginState
+
+validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - headers.Content-Type
+        - text/plain;charset=UTF-8
